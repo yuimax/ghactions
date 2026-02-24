@@ -16,11 +16,11 @@ if ($runId) {
 
 # 終了をアナウンスする
 if ($runId) {
-	$text = "`nお待たせしました。JOB が完了しました。";
+	$text = "お待たせしました。JOB が完了しました。";
 } else {
-	$text = "`nmainブランチに実行中のランが見つかりませんでした。"
+	$text = "mainブランチに実行中のrunが見つかりませんでした。"
 }
-Write-Host $text -ForegroundColor Green;
+Write-Host "`n$text" -ForegroundColor Green;
 Add-Type -AssemblyName System.Speech;
 $voice = New-Object System.Speech.Synthesis.SpeechSynthesizer;
 $voice.Volume = 100;
