@@ -1,15 +1,22 @@
-# 1. ワークフローを起動
+# ワークフローを起動
 Write-Host "ワークフローを起動中..." -ForegroundColor Cyan
 gh workflow run ping.yaml
 
 # 起動が反映されるまで少し待機
 Start-Sleep -Seconds 3
 
-# 2. 完了まで待機
-Write-Host "完了を待機しています..." -ForegroundColor Yellow
-gh run watch
+# mainブランチの最新ランIDを取得
+$runId = gh run list --branch main --limit 1 --json databaseId --jq '.[0].databaseId'
 
-# 3. 終了をアナウンスする
+# IDが空でなければwatchを開始
+if ($runId) {
+    Write-Host "ランID: $runId の監視を開始します..." -ForegroundColor Cyan
+    gh run watch $runId
+} else {
+    Write-Warning "mainブランチに実行中のランが見つかりませんでした。"
+}
+
+# 終了をアナウンスする
 $text = "お待たせしました。JOB が完了しました。";
 Write-Host $text -ForegroundColor Green;
 Add-Type -AssemblyName System.Speech;
