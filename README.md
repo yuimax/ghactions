@@ -2,10 +2,10 @@
 
 GitHub Actions を使う練習
 
-* 必要なツール
-	* Windows のコマンドプロンプト (cmd.exe)
-	* PowerShell v7 (pwsh.exe)
-	* GitHub CLI (gh.exe)
+## 必要なツール
+* Windows のコマンドプロンプト (cmd.exe)
+* PowerShell v7 (pwsh.exe)
+* GitHub CLI (gh.exe)
 
 ## ping.yaml
 
