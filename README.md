@@ -8,9 +8,9 @@ Windows のコマンドプロンプトで実行
 
 * [.github/workflows/ping.yaml](.github/workflows/ping.yaml)
 	* 手動で起動すると、15秒Sleepして終了する
-* [ping.bat](ping.bat)
+* [pingtest.bat](ping.bat)
 	* ping.ps1 を実行するだけのバッチスクリプト
-* [ping.ps1](ping.ps1)
+* [pingtest.ps1](ping.ps1)
 	<ol type="1">
 		<li>GitHub に接続して、ping.yaml のワークフローを起動する</li>
 		<li>ワークフローの終了を待つ</li>
