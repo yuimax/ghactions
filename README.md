@@ -11,6 +11,7 @@ Windows のコマンドプロンプトで実行
 * [pingtest.bat](pingtest.bat)
 	* pingtest.ps1 を実行するだけのバッチスクリプト
 * [pingtest.ps1](pingtest.ps1)
+	* ワークフローを実行するPowerShellスクリプト
 	<ol type="1">
 		<li>GitHub に接続して、ping.yaml のワークフローを起動する</li>
 		<li>ワークフローの終了を待つ</li>
