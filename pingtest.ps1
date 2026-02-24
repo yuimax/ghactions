@@ -1,6 +1,6 @@
 # 1. ワークフローを起動
 Write-Host "ワークフローを起動中..." -ForegroundColor Cyan
-gh workflow run ping.yml
+gh workflow run ping.yaml
 
 # 起動が反映されるまで少し待機
 Start-Sleep -Seconds 3
