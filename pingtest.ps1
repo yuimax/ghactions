@@ -18,6 +18,7 @@ if ($runId) {
 
 # 終了をアナウンスする
 $text = "お待たせしました。JOB が完了しました。";
+Write-Host ""
 Write-Host $text -ForegroundColor Green;
 Add-Type -AssemblyName System.Speech;
 $voice = New-Object System.Speech.Synthesis.SpeechSynthesizer;

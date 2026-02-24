@@ -2,7 +2,10 @@
 
 GitHub Actions を使う練習
 
-Windows のコマンドプロンプトで実行
+* 必要なツール
+	* Windows のコマンドプロンプト (cmd.exe)
+	* PowerShell v7 (pwsh.exe)
+	* GitHub CLI (gh.exe)
 
 ## ping.yaml
 
@@ -12,6 +15,6 @@ Windows のコマンドプロンプトで実行
 	* pingtest.ps1 を実行するだけのバッチスクリプト
 * [pingtest.ps1](pingtest.ps1)
 	* ワークフローを実行するPowerShellスクリプト
-		1. GitHub に接続して、ping.yaml のワークフローを起動する
-		2. ワークフローの終了を待つ
-		3. 完了を報告する
+	* (1) GitHub に接続して、ping.yaml のワークフローを起動する
+	* (2) ワークフローの終了を待つ
+	* (3) 完了を報告する
