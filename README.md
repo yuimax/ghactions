@@ -6,7 +6,7 @@ Windows のコマンドプロンプトで実行
 
 ## ping.yaml
 
-* [.github/workflows/ping.yaml](.github/worlflows/ping.yaml)
+* [.github/workflows/ping.yaml](.github/workflows/ping.yaml)
 	* 手動で起動すると、15秒Sleepして終了する
 * [ping.bat](ping.bat)
 	* ping.ps1 を実行するだけのバッチスクリプト
