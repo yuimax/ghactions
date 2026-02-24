@@ -12,13 +12,14 @@ $runId = gh run list --branch main --limit 1 --json databaseId --jq '.[0].databa
 if ($runId) {
     Write-Host "ランID: $runId の監視を開始します..." -ForegroundColor Cyan
     gh run watch $runId
-} else {
-    Write-Warning "mainブランチに実行中のランが見つかりませんでした。"
 }
 
 # 終了をアナウンスする
-$text = "お待たせしました。JOB が完了しました。";
-Write-Host ""
+if ($runId) {
+	$text = "`nお待たせしました。JOB が完了しました。";
+} else {
+	$text = "`nmainブランチに実行中のランが見つかりませんでした。"
+}
 Write-Host $text -ForegroundColor Green;
 Add-Type -AssemblyName System.Speech;
 $voice = New-Object System.Speech.Synthesis.SpeechSynthesizer;
