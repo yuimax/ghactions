@@ -1,0 +1,10 @@
+name: Ping Workflow
+on: workflow_dispatch # 手動起動を許可
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Starting..."
+      - run: sleep 15
+      - run: echo "Done!"
