@@ -26,3 +26,9 @@ $voice = New-Object System.Speech.Synthesis.SpeechSynthesizer;
 $voice.Volume = 100;
 $voice.Rate = 1;
 $voice.Speak($text);
+
+# ログを表示する
+if ($runId) {
+	gh run view <RUN_ID> --log > workflow_log.txt
+	less workflow_log.txt
+}

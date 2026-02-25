@@ -9,7 +9,7 @@ GitHub Actions を使う練習
 
 ## ping.yaml
 
-* [.github/workflows/ping.yaml](.github/workflows/ping.yaml)
+* <.github/workflows/ping.yaml>
 	* 手動で起動すると、15秒Sleepして終了する
 * [pingtest.bat](pingtest.bat)
 	* pingtest.ps1 を実行するだけのバッチスクリプト
