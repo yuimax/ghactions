@@ -30,5 +30,5 @@ $voice.Speak($text);
 # ログを表示する
 if ($runId) {
 	gh run view $runId --log > _workflow_log.txt
-	less _workflow_log.txt
+	less -R _workflow_log.txt
 }
