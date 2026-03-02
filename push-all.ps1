@@ -26,11 +26,20 @@ gh run watch $runID
 
 # 終了をアナウンスする
 if ($runID) {
-	$text = "お待たせしました。JOB が完了しました。";
+	$conclusion = gh run view $runID --json conclusion --jq '.conclusion'
+	if ($conclusion -eq "success") {
+		$text = "お待たせしました。JOB が完了しました。";
+		$color = "Green";
+	} else {
+		$text = "`n処理が失敗しました (Result: $conclusion)";
+		$color = "Red";
+	}
 } else {
 	$text = "mainブランチに実行中のrunが見つかりませんでした。"
+	$color = "Red";
 }
-Write-Host "`n$text" -ForegroundColor Green;
+
+Write-Host "`n$text" -ForegroundColor $color;
 Add-Type -AssemblyName System.Speech;
 $voice = New-Object System.Speech.Synthesis.SpeechSynthesizer;
 $voice.Volume = 100;
@@ -38,11 +47,3 @@ $voice.Rate = 1;
 $voice.Speak($text);
 
 
-# 結果の判定
-$conclusion = gh run view $runID --json conclusion --jq '.conclusion'
-
-if ($conclusion -eq "success") {
-    Write-Host "`n処理が正常に完了しました！" -ForegroundColor Green
-} else {
-    Write-Host "`n処理が失敗しました (Result: $conclusion)" -ForegroundColor Red
-}
