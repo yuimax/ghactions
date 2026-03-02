@@ -7,6 +7,8 @@ git add .
 git commit -m "cmt: $timestamp"
 git push origin main
 
+gh run list
+
 exit
 
 # ワークフローが生成されるまで少し待機 (GitHub側の反映待ち)
