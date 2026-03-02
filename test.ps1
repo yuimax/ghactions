@@ -7,7 +7,7 @@ git add .
 git commit -m "cmt: $timestamp"
 git push origin main
 
-gh run list
+gh run watch
 
 exit
 
